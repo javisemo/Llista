@@ -51,4 +51,26 @@ void LLISTABIOR_vesFinal (LlistaBiOr* l){
 	l -> pdi = l -> ult -> ant;
 }
 
+void LLISTABIOR_esborra (LlistaBiOr* l){
+	Node* n;
+	if(l -> pdi -> ant != NULL && l -> pdi -> seg != NULL){
+		l -> pdi -> ant -> seg = l -> pdi -> seg;
+		l -> pdi -> seg -> ant = l -> pdi -> ant;
+		n = l -> pdi;
+		l -> pdi = l -> pdi -> seg;
+		free (n);
+	}
+}
+
+
+void LLISTABIOR_destrueix(LlistaBiOr *l){
+	LLISTABIOR_vesInici(l);
+	while (!LLISTABIOR_esBuida(*l)){
+		LLISTABIOR_esborra(l);
+	}
+	free(l -> pri);
+	free(l -> ult);
+	l -> pdi = NULL;
+	l -> ult = NULL;
+}
 

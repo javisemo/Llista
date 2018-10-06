@@ -25,6 +25,7 @@ void LLISTABIOR_retrocedeix(LlistaBiOr *l);
 int LLISTABIOR_consulta(LlistaBiOr l);
 int LLISTABIOR_esBuida(LlistaBiOr l);
 void LLISTABIOR_destrueix(LlistaBiOr *l);
-
-
+void LLISTABIOR_vesInici(LlistaBiOr* l);
+void LLISTABIOR_vesFinal(LlistaBiOr* l);
+void LLISTABIOR_esborra(LlistaBiOr* l);
 #endif
