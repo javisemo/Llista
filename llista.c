@@ -38,3 +38,7 @@ int LLISTABIOR_consulta(LlistaBiOr l){
 	}
 	return n;
 }
+
+int LLISTABIOR_esBuida(LlistaBiOr l){
+	return l.pri -> seg == l.ult;
+}

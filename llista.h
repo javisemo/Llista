@@ -23,7 +23,7 @@ void LLISTABIOR_inserir(LlistaBiOr *l, int n);
 void LLISTABIOR_avanca(LlistaBiOr *l);
 void LLISTABIOR_retrocedeix(LlistaBiOr *l);
 int LLISTABIOR_consulta(LlistaBiOr l);
-void LLISTABIOR_buida(LlistaBiOr l);
+int LLISTABIOR_esBuida(LlistaBiOr l);
 void LLISTABIOR_destrueix(LlistaBiOr *l);
 
 
