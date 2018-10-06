@@ -81,3 +81,11 @@ void LLISTABIOR_retrocedeix(LlistaBiOr *l){
 }
 
 
+int LLISTABIOR_fi (LlistaBiOr l){
+	return l.pdi == l.ult;
+}
+
+int LLISTABIOR_fi (LlistaBiOr l){
+	return l.pdi == l.pri;
+}
+

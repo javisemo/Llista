@@ -28,4 +28,7 @@ void LLISTABIOR_destrueix(LlistaBiOr *l);
 void LLISTABIOR_vesInici(LlistaBiOr* l);
 void LLISTABIOR_vesFinal(LlistaBiOr* l);
 void LLISTABIOR_esborra(LlistaBiOr* l);
+int LLISTABIOR_fi (LlistaBiOr l);
+int LLISTABIOR_inici (LlistaBiOr l);
+
 #endif
