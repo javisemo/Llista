@@ -21,3 +21,10 @@ LlistaBiOr LLISTABIOR_crea(){
 	}
 	return l;
 }
+
+void LLISTABIOR_avanca (LlistaBiOr* l){
+	if(l -> pdi != l -> ult){
+		l -> pdi = 1 -> pdi -> seg;
+	}
+}
+
