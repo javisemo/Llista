@@ -74,3 +74,10 @@ void LLISTABIOR_destrueix(LlistaBiOr *l){
 	l -> ult = NULL;
 }
 
+void LLISTABIOR_retrocedeix(LlistaBiOr *l){
+	if (l -> pdi != l-> pri) {
+		l -> pdi = l -> pdi -> ant;
+	}
+}
+
+
