@@ -28,3 +28,13 @@ void LLISTABIOR_avanca (LlistaBiOr* l){
 	}
 }
 
+int LLISTABIOR_consulta(LlistaBiOr l){
+	int n;
+	if(l.pdi == l.pri || l.pdi == l.ult){
+		n = ELEMENT_INDEFINIT;
+	}
+	else {
+		n = l.pdi -> e;
+	}
+	return n;
+}
