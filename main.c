@@ -1,5 +1,5 @@
 void main(int argc, char const *argv[])
 {
-    int i = 0;
-    return i;
+    LlistaBiOr l;
+    l = LLISTABIOR_crea();
 }
