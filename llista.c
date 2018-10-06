@@ -42,3 +42,13 @@ int LLISTABIOR_consulta(LlistaBiOr l){
 int LLISTABIOR_esBuida(LlistaBiOr l){
 	return l.pri -> seg == l.ult;
 }
+
+void LLISTABIOR_vesInici (LlistaBiOr* l){
+	l -> pdi = l -> pri -> seg;
+}
+
+void LLISTABIOR_vesFinal (LlistaBiOr* l){
+	l -> pdi = l -> ult -> ant;
+}
+
+
