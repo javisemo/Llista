@@ -1,6 +1,10 @@
 #ifndef _LLISTA_H
 #define _LLISTA_H
 
+#include <stdio.h>
+
+#define ELEMENT_INDEFINIT -1
+
 typedef struct _Node{
     int e;
     struct _Node * seg;
