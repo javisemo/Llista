@@ -85,7 +85,7 @@ int LLISTABIOR_fi (LlistaBiOr l){
 	return l.pdi == l.ult;
 }
 
-int LLISTABIOR_fi (LlistaBiOr l){
+int LLISTABIOR_inici (LlistaBiOr l){
 	return l.pdi == l.pri;
 }
 
