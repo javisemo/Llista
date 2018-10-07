@@ -2,6 +2,7 @@
 #define _LLISTA_H
 
 #include <stdio.h>
+#include <stdlib.h>
 
 #define ELEMENT_INDEFINIT -1
 

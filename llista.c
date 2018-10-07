@@ -24,7 +24,7 @@ LlistaBiOr LLISTABIOR_crea(){
 
 void LLISTABIOR_avanca (LlistaBiOr* l){
 	if(l -> pdi != l -> ult){
-		l -> pdi = 1 -> pdi -> seg;
+		l -> pdi = l -> pdi -> seg;
 	}
 }
 
@@ -62,7 +62,6 @@ void LLISTABIOR_esborra (LlistaBiOr* l){
 	}
 }
 
-
 void LLISTABIOR_destrueix(LlistaBiOr *l){
 	LLISTABIOR_vesInici(l);
 	while (!LLISTABIOR_esBuida(*l)){
@@ -70,6 +69,7 @@ void LLISTABIOR_destrueix(LlistaBiOr *l){
 	}
 	free(l -> pri);
 	free(l -> ult);
+    l -> pri = NULL;
 	l -> pdi = NULL;
 	l -> ult = NULL;
 }
@@ -79,7 +79,6 @@ void LLISTABIOR_retrocedeix(LlistaBiOr *l){
 		l -> pdi = l -> pdi -> ant;
 	}
 }
-
 
 int LLISTABIOR_fi (LlistaBiOr l){
 	return l.pdi == l.ult;
@@ -91,11 +90,12 @@ int LLISTABIOR_inici (LlistaBiOr l){
 
 void LLISTABIOR_inserir(LlistaBiOr*l, int n){
 	Node* aux = NULL;
+	int inserit = 0;
+	aux = (Node*)malloc(sizeof(Node));
 	if(LLISTABIOR_esBuida(*l) == 0){
-		aux = (Node*)malloc(sizeof(Node));
 		if(aux != NULL){
 			LLISTABIOR_vesInici(l);
-			while (LLISTABIOR_fi(*l)==0){
+			while (LLISTABIOR_fi(*l)==0 && !inserit){
 				if(l -> pdi -> e >= n){
 					aux -> e = n;
 					aux -> ant = l -> pdi -> ant;
@@ -103,36 +103,33 @@ void LLISTABIOR_inserir(LlistaBiOr*l, int n){
 					l -> pdi -> ant -> seg = aux;
 					l -> pdi -> ant = aux;
 					l -> pdi = aux;
+					inserit = 1;
 				}
 				else{
 					LLISTABIOR_avanca(l);
 				}
-
 			}
-			if(LLISTABIOR_fi(*l)==1){
+			if(inserit == 0){
+				l -> pdi = l -> ult;
 				aux -> e = n;
 				aux -> ant = l -> pdi -> ant;
 				aux -> seg = l -> pdi;
 				l -> pdi -> ant -> seg = aux;
 				l -> pdi -> ant = aux;
 				l -> pdi = aux;
+				inserit = 1;
 			}
 		}
+	}else{
+		l -> pdi = l -> ult;
+		aux -> e = n;
+		aux -> ant = l -> pdi -> ant;
+		aux -> seg = l -> pdi;
+		l -> pdi -> ant -> seg = aux;
+		l -> pdi -> ant = aux;
+		l -> pdi = aux;
+		inserit = 1;
 	}
-	else{
-		aux = (Node*)malloc(sizeof(Node));
-		if (aux(!=NULL)){
-			l -> pdi = l -> pri;
-			aux -> e = n;
-			aux -> ant = l -> pdi;
-			aux -> seg = l -> pdi -> seg;
-			l -> pdi -> seg -> ant = aux;
-			l -> pdi -> seg = aux;
-			l -> pdi = aux;
-
-		}
-	}
-	
 }
 
 
