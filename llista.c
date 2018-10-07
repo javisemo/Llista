@@ -119,6 +119,19 @@ void LLISTABIOR_inserir(LlistaBiOr*l, int n){
 			}
 		}
 	}
+	else{
+		aux = (Node*)malloc(sizeof(Node));
+		if (aux(!=NULL)){
+			l -> pdi = l -> pri;
+			aux -> e = n;
+			aux -> ant = l -> pdi;
+			aux -> seg = l -> pdi -> seg;
+			l -> pdi -> seg -> ant = aux;
+			l -> pdi -> seg = aux;
+			l -> pdi = aux;
+
+		}
+	}
 	
 }
 
