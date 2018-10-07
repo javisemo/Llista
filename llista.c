@@ -89,3 +89,37 @@ int LLISTABIOR_inici (LlistaBiOr l){
 	return l.pdi == l.pri;
 }
 
+void LLISTABIOR_inserir(LlistaBiOr*l, int n){
+	Node* aux = NULL;
+	if(LLISTABIOR_esBuida(*l) == 0){
+		aux = (Node*)malloc(sizeof(Node));
+		if(aux != NULL){
+			LLISTABIOR_vesInici(l);
+			while (LLISTABIOR_fi(*l)==0){
+				if(l -> pdi -> e >= n){
+					aux -> e = n;
+					aux -> ant = l -> pdi -> ant;
+					aux -> seg = l -> pdi;
+					l -> pdi -> ant -> seg = aux;
+					l -> pdi -> ant = aux;
+					l -> pdi = aux;
+				}
+				else{
+					LLISTABIOR_avanca(l);
+				}
+
+			}
+			if(LLISTABIOR_fi(*l)==1){
+				aux -> e = n;
+				aux -> ant = l -> pdi -> ant;
+				aux -> seg = l -> pdi;
+				l -> pdi -> ant -> seg = aux;
+				l -> pdi -> ant = aux;
+				l -> pdi = aux;
+			}
+		}
+	}
+	
+}
+
+
